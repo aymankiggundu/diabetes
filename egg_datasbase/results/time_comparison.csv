@@ -1,0 +1,73 @@
+Model,Training Time,Dataset,Model Type
+Logistic Regression,0.4282970428466797,original,base
+SVM,0.04656791687011719,original,base
+Decision Tree,0.037789344787597656,original,base
+Random Forest,10.297296524047852,original,base
+XGBoost,4.335314750671387,original,base
+KNN,0.21755099296569824,original,base
+Naive Bayes,0.041131019592285156,original,base
+ANN (MLP),0.38071417808532715,original,base
+Gradient Boosting,2.090350389480591,original,base
+Extra Trees,3.23154354095459,original,base
+AdaBoost,0.16834259033203125,original,base
+CatBoost,9.090790271759033,original,base
+Logistic Regression (Sparse),0.01714324951171875,original,sparse
+Decision Tree (Sparse),0.004776954650878906,original,sparse
+Random Forest (Sparse),0.2738635540008545,original,sparse
+XGBoost (Sparse),0.5785515308380127,original,sparse
+Random Forest (Distilled),1.1226906776428223,original,distilled
+Random Forest (Sparse Distilled),1.0175890922546387,original,sparse_distilled
+Logistic Regression,0.553339958190918,noisy,0.01_base
+SVM,0.07910847663879395,noisy,0.01_base
+Decision Tree,0.09718036651611328,noisy,0.01_base
+Random Forest,7.8564982414245605,noisy,0.01_base
+XGBoost,7.015757322311401,noisy,0.01_base
+KNN,0.06998300552368164,noisy,0.01_base
+Naive Bayes,0.07557559013366699,noisy,0.01_base
+ANN (MLP),0.22864556312561035,noisy,0.01_base
+Gradient Boosting,1.4401569366455078,noisy,0.01_base
+Extra Trees,2.009340286254883,noisy,0.01_base
+AdaBoost,0.11813688278198242,noisy,0.01_base
+CatBoost,6.973524808883667,noisy,0.01_base
+Logistic Regression (Sparse),0.004736661911010742,noisy,0.01_sparse
+Decision Tree (Sparse),0.0031037330627441406,noisy,0.01_sparse
+Random Forest (Sparse),0.22033381462097168,noisy,0.01_sparse
+XGBoost (Sparse),0.04247283935546875,noisy,0.01_sparse
+Random Forest (Distilled),0.6083338260650635,noisy,0.01_distilled
+Random Forest (Sparse Distilled),0.3448140621185303,noisy,0.01_sparse_distilled
+Logistic Regression,0.30249953269958496,noisy,0.05_base
+SVM,0.05514049530029297,noisy,0.05_base
+Decision Tree,0.04651618003845215,noisy,0.05_base
+Random Forest,4.1185643672943115,noisy,0.05_base
+XGBoost,1.979813575744629,noisy,0.05_base
+KNN,0.025853395462036133,noisy,0.05_base
+Naive Bayes,0.022224903106689453,noisy,0.05_base
+ANN (MLP),0.11867737770080566,noisy,0.05_base
+Gradient Boosting,0.7904207706451416,noisy,0.05_base
+Extra Trees,0.7393732070922852,noisy,0.05_base
+AdaBoost,0.03312039375305176,noisy,0.05_base
+CatBoost,5.474807262420654,noisy,0.05_base
+Logistic Regression (Sparse),0.00879812240600586,noisy,0.05_sparse
+Decision Tree (Sparse),0.003652811050415039,noisy,0.05_sparse
+Random Forest (Sparse),0.1323223114013672,noisy,0.05_sparse
+XGBoost (Sparse),0.02108931541442871,noisy,0.05_sparse
+Random Forest (Distilled),0.2893798351287842,noisy,0.05_distilled
+Random Forest (Sparse Distilled),0.14472603797912598,noisy,0.05_sparse_distilled
+Logistic Regression,0.21903729438781738,noisy,0.1_base
+SVM,0.029132366180419922,noisy,0.1_base
+Decision Tree,0.024409770965576172,noisy,0.1_base
+Random Forest,4.177239656448364,noisy,0.1_base
+XGBoost,1.0490126609802246,noisy,0.1_base
+KNN,0.03622007369995117,noisy,0.1_base
+Naive Bayes,0.03599381446838379,noisy,0.1_base
+ANN (MLP),0.16082429885864258,noisy,0.1_base
+Gradient Boosting,0.8363833427429199,noisy,0.1_base
+Extra Trees,0.7758219242095947,noisy,0.1_base
+AdaBoost,0.5743412971496582,noisy,0.1_base
+CatBoost,6.2997214794158936,noisy,0.1_base
+Logistic Regression (Sparse),0.00469517707824707,noisy,0.1_sparse
+Decision Tree (Sparse),0.003052234649658203,noisy,0.1_sparse
+Random Forest (Sparse),0.1337568759918213,noisy,0.1_sparse
+XGBoost (Sparse),0.018119096755981445,noisy,0.1_sparse
+Random Forest (Distilled),0.3364119529724121,noisy,0.1_distilled
+Random Forest (Sparse Distilled),0.16091108322143555,noisy,0.1_sparse_distilled

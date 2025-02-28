@@ -1,0 +1,73 @@
+Model,Accuracy,Dataset,Model Type
+Logistic Regression,1.0,original,base
+SVM,0.5,original,base
+Decision Tree,1.0,original,base
+Random Forest,1.0,original,base
+XGBoost,0.5,original,base
+KNN,1.0,original,base
+Naive Bayes,0.875,original,base
+ANN (MLP),0.625,original,base
+Gradient Boosting,1.0,original,base
+Extra Trees,1.0,original,base
+AdaBoost,1.0,original,base
+CatBoost,1.0,original,base
+Logistic Regression (Sparse),1.0,original,sparse
+Decision Tree (Sparse),1.0,original,sparse
+Random Forest (Sparse),1.0,original,sparse
+XGBoost (Sparse),0.5,original,sparse
+Random Forest (Distilled),1.0,original,distilled
+Random Forest (Sparse Distilled),1.0,original,sparse_distilled
+Logistic Regression,0.5,noisy,0.01_base
+SVM,0.5,noisy,0.01_base
+Decision Tree,0.875,noisy,0.01_base
+Random Forest,1.0,noisy,0.01_base
+XGBoost,0.5,noisy,0.01_base
+KNN,1.0,noisy,0.01_base
+Naive Bayes,0.875,noisy,0.01_base
+ANN (MLP),0.75,noisy,0.01_base
+Gradient Boosting,0.875,noisy,0.01_base
+Extra Trees,1.0,noisy,0.01_base
+AdaBoost,0.875,noisy,0.01_base
+CatBoost,0.875,noisy,0.01_base
+Logistic Regression (Sparse),1.0,noisy,0.01_sparse
+Decision Tree (Sparse),0.875,noisy,0.01_sparse
+Random Forest (Sparse),1.0,noisy,0.01_sparse
+XGBoost (Sparse),0.5,noisy,0.01_sparse
+Random Forest (Distilled),1.0,noisy,0.01_distilled
+Random Forest (Sparse Distilled),1.0,noisy,0.01_sparse_distilled
+Logistic Regression,0.5,noisy,0.05_base
+SVM,0.5,noisy,0.05_base
+Decision Tree,0.75,noisy,0.05_base
+Random Forest,0.875,noisy,0.05_base
+XGBoost,0.5,noisy,0.05_base
+KNN,0.875,noisy,0.05_base
+Naive Bayes,0.875,noisy,0.05_base
+ANN (MLP),0.5,noisy,0.05_base
+Gradient Boosting,0.75,noisy,0.05_base
+Extra Trees,1.0,noisy,0.05_base
+AdaBoost,0.75,noisy,0.05_base
+CatBoost,0.75,noisy,0.05_base
+Logistic Regression (Sparse),1.0,noisy,0.05_sparse
+Decision Tree (Sparse),0.75,noisy,0.05_sparse
+Random Forest (Sparse),0.875,noisy,0.05_sparse
+XGBoost (Sparse),0.5,noisy,0.05_sparse
+Random Forest (Distilled),1.0,noisy,0.05_distilled
+Random Forest (Sparse Distilled),1.0,noisy,0.05_sparse_distilled
+Logistic Regression,1.0,noisy,0.1_base
+SVM,0.5,noisy,0.1_base
+Decision Tree,0.875,noisy,0.1_base
+Random Forest,1.0,noisy,0.1_base
+XGBoost,0.5,noisy,0.1_base
+KNN,1.0,noisy,0.1_base
+Naive Bayes,0.875,noisy,0.1_base
+ANN (MLP),0.5,noisy,0.1_base
+Gradient Boosting,1.0,noisy,0.1_base
+Extra Trees,1.0,noisy,0.1_base
+AdaBoost,0.875,noisy,0.1_base
+CatBoost,1.0,noisy,0.1_base
+Logistic Regression (Sparse),1.0,noisy,0.1_sparse
+Decision Tree (Sparse),0.875,noisy,0.1_sparse
+Random Forest (Sparse),1.0,noisy,0.1_sparse
+XGBoost (Sparse),0.5,noisy,0.1_sparse
+Random Forest (Distilled),1.0,noisy,0.1_distilled
+Random Forest (Sparse Distilled),1.0,noisy,0.1_sparse_distilled

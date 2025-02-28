@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Diabetes Prediction by Model</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      .prediction-box {
+        padding: 20px;
+        border-radius: 10px;
+        margin-top: 20px;
+        display: none;
+      }
+      .loading {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-dark bg-primary">
+      <div class="container">
+        <span class="navbar-brand mb-0 h1">EGG Prediction Model</span>
+      </div>
+    </nav>
+
+    <div class="container mt-4">
+      <div class="row">
+        <div class="col-md-8 offset-md-2">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Upload Data Files</h5>
+              <form id="prediction-form">
+                <div class="mb-3">
+                  <label class="form-label">Fasting State CSV</label>
+                  <input
+                    type="file"
+                    class="form-control"
+                    id="fasting-file"
+                    accept=".csv"
+                    required
+                  />
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">Postprandial State CSV</label>
+                  <input
+                    type="file"
+                    class="form-control"
+                    id="postprandial-file"
+                    accept=".csv"
+                    required
+                  />
+                </div>
+                <button type="submit" class="btn btn-primary">
+                  Predict
+                  <div
+                    class="spinner-border spinner-border-sm loading"
+                    role="status"
+                  >
+                    <span class="visually-hidden">Loading...</span>
+                  </div>
+                </button>
+                <a href="/sample_data" class="btn btn-outline-secondary"
+                  >Download Sample Data</a
+                >
+              </form>
+
+              <div id="prediction-result" class="prediction-box bg-light">
+                <h5>Prediction Result</h5>
+                <div id="result-content"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card mt-4">
+            <div class="card-body">
+              <h5 class="card-title">Instructions</h5>
+              <ol>
+                <li>
+                  Upload two CSV files:
+                  <ul>
+                    <li>
+                      One for fasting state (3 columns for channels 1, 2, and 3)
+                    </li>
+                    <li>
+                      One for postprandial state (3 columns for channels 1, 2,
+                      and 3)
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  Each file should have exactly 3 columns representing the three
+                  channels
+                </li>
+                <li>The data should be numeric values</li>
+                <li>Click 'Predict' to get the prediction result</li>
+              </ol>
+              <div class="alert alert-info">
+                <strong>Example CSV Format:</strong><br />
+                <code>
+                  Channel1,Channel2,Channel3<br />
+                  0.5,0.6,0.7<br />
+                  0.8,0.9,1.0<br />
+                  ...
+                </code>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      document
+        .getElementById("prediction-form")
+        .addEventListener("submit", async (e) => {
+          e.preventDefault();
+
+          const formData = new FormData();
+          formData.append(
+            "fasting_file",
+            document.getElementById("fasting-file").files[0]
+          );
+          formData.append(
+            "postprandial_file",
+            document.getElementById("postprandial-file").files[0]
+          );
+
+          // Show loading
+          document.querySelector(".loading").style.display = "inline-block";
+
+          try {
+            const response = await fetch("/predict", {
+              method: "POST",
+              body: formData,
+            });
+
+            const result = await response.json();
+
+            if (response.ok) {
+              const resultHtml = `
+                        <div class="alert ${
+                          result.prediction === "Diabetic"
+                            ? "alert-warning"
+                            : "alert-success"
+                        }">
+                            <strong>Prediction:</strong> ${
+                              result.prediction
+                            }<br>
+                            <strong>Confidence:</strong> ${(
+                              result.probability * 100
+                            ).toFixed(2)}%<br>
+                            <strong>Features Extracted:</strong> ${
+                              result.features_extracted
+                            }
+                        </div>
+                    `;
+              document.getElementById("result-content").innerHTML = resultHtml;
+              document.getElementById("prediction-result").style.display =
+                "block";
+            } else {
+              throw new Error(result.error);
+            }
+          } catch (error) {
+            document.getElementById("result-content").innerHTML = `
+                    <div class="alert alert-danger">
+                        Error: ${error.message}
+                    </div>
+                `;
+            document.getElementById("prediction-result").style.display =
+              "block";
+          }
+
+          // Hide loading
+          document.querySelector(".loading").style.display = "none";
+        });
+    </script>
+  </body>
+</html>
